@@ -4,7 +4,8 @@ const swaggerUi = require('swagger-ui-express');
 
 
 const app = express()
-const port = 3300
+const port = process.env.PORT ||3300 
+
 
 
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(null, {
