@@ -10,7 +10,7 @@ const port = process.env.PORT ||3300
 
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(null, {
   swaggerOptions: {
-    url: '/entsoe'
+    url: '/tmp'
   }
 }));
 
