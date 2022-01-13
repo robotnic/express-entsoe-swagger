@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "express": "^4.17.1",
-    "express-entsoe": "^0.4.8",
+    "express-entsoe": "^0.4.9",
     "swagger-ui-express": "^4.1.6"
   },
   "name": "express-entsoe-swagger",
