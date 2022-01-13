@@ -10,14 +10,14 @@ const port = process.env.PORT ||3300
 
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(null, {
   swaggerOptions: {
-    url: '/tmp'
+    url: '/entsoe'
   }
 }));
 
 
 app.use(Entsoe.init({
   securityToken: '68aa46a3-3b1b-4071-ac6b-4372830b114f',
-  cacheDir: 'cacheDir'
+  cacheDir: '/tmp'
 }));
 
 app.listen(port, () => {
