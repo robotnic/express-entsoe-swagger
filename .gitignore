@@ -1,2 +1,3 @@
 cacheDir
 node_modules
+.env

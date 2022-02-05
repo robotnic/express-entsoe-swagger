@@ -6,7 +6,7 @@ var cors = require('cors')
 
 
 const app = express()
-const port = process.env.PORT ||3300 
+const port = process.env.PORT || 3300
 
 app.use(cors())
 
@@ -18,10 +18,14 @@ app.use('/swagger', swaggerUi.serve, swaggerUi.setup(null, {
 }));
 
 
-app.use(Entsoe.init({
-  securityToken: '68aa46a3-3b1b-4071-ac6b-4372830b114f',
-  cacheDir: '/tmp'
-}));
+const entsoeConfig={
+  securityToken: process.env.securityToken,
+  awsBucket: process.env.awsBucket,
+  awsSecretAccessKey: process.env.awsSecretAccessKey,
+  awsAccessKeyId: process.env.awsAccessKeyId,
+  awsRegion: process.env.awsRegion
+};
+app.use(Entsoe.init(entsoeConfig));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

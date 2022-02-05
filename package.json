@@ -2,7 +2,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-entsoe": "^0.4.12",
+    "express-entsoe": "^0.5.1",
     "swagger-ui-express": "^4.1.6"
   },
   "name": "express-entsoe-swagger",
@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "env-cmd node index.js"
   },
   "author": "",
   "license": "ISC",
