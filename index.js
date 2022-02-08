@@ -26,10 +26,14 @@ const entsoeConfig={
   awsRegion: process.env.awsRegion
 };
 */
-app.use(Entsoe.init({
-  securityToken:'68aa46a3-3b1b-4071-ac6b-4372830b114f',
-  cacheDir:'/tmp'
-}));
+const entsoeOptions = {
+  securityToken: process.env.securityToken || '68aa46a3-3b1b-4071-ac6b-4372830b114f',
+  awsBucket:  process.env.awsBucket || 'elasticbeanstalk-eu-central-1-209114680710',
+  awsRegion:  process.env.awsRegion || 'eu-central-1',
+  awsSecurityToken: process.env.awsSecurityToken,
+  awsTokenKeyId: process.env.awsTokenKeyId
+};
+app.use(Entsoe.init(entsoeOptions));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
