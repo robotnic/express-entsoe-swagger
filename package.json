@@ -3,7 +3,7 @@
     "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
-    "express-entsoe": "^0.5.5",
+    "express-entsoe": "^0.5.6",
     "swagger-ui-express": "^4.1.6"
   },
   "name": "express-entsoe-swagger",
