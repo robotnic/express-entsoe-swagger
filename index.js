@@ -38,6 +38,7 @@ if (process.env.awsSecretAccessKey) {
   entsoeOptions.awsSecretAccessKey = process.env.awsSecretAccessKey;
 }
 console.log(entsoeOptions);
+console.log(process.env);
 app.use(Entsoe.init(entsoeOptions));
 
 app.listen(port, () => {
