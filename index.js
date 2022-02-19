@@ -27,6 +27,7 @@ const entsoeConfig={
 };
 */
 const entsoeOptions = {
+  maxAge: 60 * 60 * 24 * 7,
   securityToken: process.env.securityToken || '68aa46a3-3b1b-4071-ac6b-4372830b114f',
   awsBucket:  process.env.awsBucket || 'elasticbeanstalk-eu-central-1-209114680710',
   awsRegion:  process.env.awsRegion || 'eu-central-1'
@@ -37,8 +38,6 @@ if (process.env.awsAccessKeyId) {
 if (process.env.awsSecretAccessKey) {
   entsoeOptions.awsSecretAccessKey = process.env.awsSecretAccessKey;
 }
-console.log(entsoeOptions);
-console.log(process.env);
 app.use(Entsoe.init(entsoeOptions));
 
 app.listen(port, () => {
