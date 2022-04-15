@@ -1,3 +1,5 @@
 cacheDir
 node_modules
 .dev
+.prod
+.local

@@ -29,13 +29,11 @@ const entsoeConfig={
 const entsoeOptions = {
   maxAge: 60 * 60 * 24 * 7,
   securityToken: process.env.securityToken || '68aa46a3-3b1b-4071-ac6b-4372830b114f',
-  awsBucket:  process.env.awsBucket || 'elasticbeanstalk-eu-central-1-209114680710',
-  awsRegion:  process.env.awsRegion || 'eu-central-1'
 };
 if (process.env.awsAccessKeyId) {
   entsoeOptions.awsAccessKeyId = process.env.awsAccessKeyId;
-}
-if (process.env.awsSecretAccessKey) {
+  entsoeOptions.awsBucket = process.env.awsBucket || 'elasticbeanstalk-eu-central-1-209114680710',
+  entsoeOptions.awsRegion = process.env.awsRegion || 'eu-central-1'
   entsoeOptions.awsSecretAccessKey = process.env.awsSecretAccessKey;
 }
 app.use(Entsoe.init(entsoeOptions));
